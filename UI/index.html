@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Components</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="scripts/header.js" defer></script>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header" role="banner">
+      <!-- header-logo -->
+      <img id="logo" class="header-logo" src="assets/logo.png" alt="">
+      <!-- header-button -->
+      <button type="button" class="header-button" aria-label="Menú de navegación" aria-expanded="false"
+        aria-controls="nav">☰</button>
+      <!-- header-nav -->
+      <nav class="header-nav" id="nav" role="navigation" aria-hidden="true">
+        <ul class="menu">
+          <a href="#inicio" class="header-link active">Inicio</a>
+          <a href="#Componentes" class="header-link">Componentes</a>
+          <a href="#Documentación" class="header-link">Documentación</a>
+          <a href="#contacto" class="header-link">Contacto</a>
+        </ul>
+      </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="hero-titulo word word--left">
+        Impulsa tu Diseño Web con Componentes
+        <span class="highlight" id="rotating-word">inteligentes</span>
+      </h1>
+      <p class="hero-descripcion word word--left">
+        Descubre herramientas y recursos que te ayudarán a diseñar más rápido, mejor y con mayor impacto.
+      </p>
+    </section>
+  </main>
+
+
+</body>
+
+<script>
+  const words = ['inteligentes', 'modernos', 'accesibles', 'eficientes'];
+  const rotatingWord = document.getElementById('rotating-word');
+  let index = 0;
+
+  setInterval(() => {
+    // Desvanece la palabra actual
+    rotatingWord.style.opacity = 0;
+
+    // Espera a que termine la transición, luego cambia la palabra
+    setTimeout(() => {
+      index = (index + 1) % words.length;
+      rotatingWord.textContent = words[index];
+      rotatingWord.style.opacity = 1;
+    }, 500); // Tiempo igual al transition del CSS
+  }, 3000); // Cada 3 segundos cambia la palabra
+</script>
+
+</html>
