@@ -1,0 +1,91 @@
+@import url("componentes/header.css");
+
+/* Variables para el tema claro */
+:root {
+  /* Fondos */
+  --color-fondo-principal: #F8F8F8;
+
+  --color-separador: #FFFFFF2C;
+  --color-hover: #E0E0E0;
+
+  /* Texto */
+  --color-texto-principal: #121212;
+
+  /* Colores */
+  --color-azul: #0B63E5;
+
+}
+
+/* Variables para el tema oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Fondos */
+    --color-fondo-principal: #121212;
+
+    /* Texto */
+    --color-texto-principal: #F8F8F8;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--color-fondo-principal);
+  color: var(--color-texto-principal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero {
+  background: var(--color-fondo-principal);
+  padding: 4rem 1.5rem;
+  min-height: 100vh;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  max-width: 600px;
+}
+
+.hero-descripcion {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--color-texto-principal);
+  max-width: 600px;
+}
+
+.highlight {
+  color: var(--color-azul);
+  transition: opacity 0.5s ease;
+  display: inline-block;
+}
+
+.word {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.word--left {
+  transform: translateY(50px);
+  animation: slideInLeft 0.8s forwards;
+}
+
+/* Animaciones clave */
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
