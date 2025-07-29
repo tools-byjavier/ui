@@ -97,7 +97,10 @@
     position: absolute;
     top: 70px;
     left: 0;
-    width: 100%;
+    
+    width: 100vw;
+    height: 80vh;
+    
     flex-direction: column;
     background-color: var(--color-fondo-principal);
     border-top: 1px solid var(--color-separador);
