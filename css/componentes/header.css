@@ -9,6 +9,7 @@
   margin: 0 auto;
   padding: 1rem;
   border-bottom: 1px solid var(--color-separador);
+  background-color: var(--color-fondo-principal);
 }
 
 .header-text {
