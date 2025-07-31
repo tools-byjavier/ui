@@ -1,50 +1,31 @@
-// header
+// Obtenemos el botón que abre/cierra el menú
 const toggle = document.querySelector('.header-button');
+
+// Obtenemos el elemento del menú de navegación
 const nav = document.getElementById('nav');
 
-// Función para abrir/cerrar el menú
+// Función para abrir o cerrar el menú
 function toggleMenu() {
-  const expanded = toggle.getAttribute('aria-expanded') === 'true';
-  toggle.setAttribute('aria-expanded', String(!expanded));
+  // Alterna la clase 'open' en el menú. Si la tiene, la quita; si no la tiene, la agrega
   nav.classList.toggle('open');
-  nav.setAttribute('aria-hidden', String(expanded));
 }
 
-// Función para cerrar el menú (usada también con Escape)
+// Función para cerrar el menú
 function closeMenu() {
+  // Asegura que se quite la clase 'open' del menú
   nav.classList.remove('open');
-  toggle.setAttribute('aria-expanded', 'false');
-  nav.setAttribute('aria-hidden', 'true');
+
+  // Devuelve el enfoque al botón (opcional, se puede quitar si no es necesario)
   toggle.focus();
 }
 
-// Evento para el botón de toggle
+// Evento que se activa al hacer clic en el botón del menú
 toggle.addEventListener('click', toggleMenu);
 
-// Evento para la tecla Escape
+// Evento que detecta si se presiona la tecla Escape
 document.addEventListener('keydown', (e) => {
+  // Si la tecla presionada es Escape, se cierra el menú
   if (e.key === 'Escape') {
     closeMenu();
   }
 });
-
-
-
-
-
-// Imagen
-const img = document.getElementById('logo');
-
-function actualizarImagen() {
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    img.src = 'assets/logo.png'; // Imagen para modo oscuro
-  } else {
-    img.src = 'assets/logo-2.png'; // Imagen para modo claro
-  }
-}
-
-// Llamar al cargar la página
-actualizarImagen();
-
-// Escuchar cambios en el tema (si el usuario cambia el modo)
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', actualizarImagen);
