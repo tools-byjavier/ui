@@ -1,77 +1,69 @@
 .hero {
+  align-items: center;
+  background: var(--color-fondo-principal);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
-
-  text-align: center;
-
-  background: var(--color-fondo-principal);
-  padding: 4rem 1.5rem;
-  min-height: 80vh;
-  max-width: 1200px;
   margin: 0 auto;
+  max-width: 1200px;
+  min-height: 80vh;
+  padding: 4rem 1.5rem;
+  text-align: center;
 }
 
-
-.hero-titulo {
+.hero-title {
   font-size: 2.5rem;
   font-weight: bold;
-  max-width: 600px;
   margin-bottom: 2rem;
+  max-width: 600px;
 }
 
-.hero-descripcion {
-  margin-bottom: 2rem;
-  font-size: 1.125rem;
+.hero-description {
   color: var(--color-texto-principal);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
   max-width: 600px;
 }
 
 .highlight {
   color: var(--color-azul);
-  transition: opacity 0.5s ease;
   display: inline-block;
+  transition: opacity 0.5s ease;
 }
 
-.word {
+.animation {
+  animation: fadeInUp 0.8s forwards;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.8s forwards;
 }
 
-.word--left {
-  transform: translateY(50px);
+.slide {
   animation: slideInLeft 0.8s forwards;
+  transform: translateY(50px);
 }
 
-.btn-principal {
+.button-primary {
   background-color: var(--color-azul);
-  border: none;
-  padding: 12px 24px;
+  border-radius: 8px;
   color: var(--color-texto-principal);
   font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
   margin-top: 1rem;
-  width: 100%;
   max-width: 600px;
+  padding: 12px 24px;
+  width: 100%;
 }
 
-.btn-secundario {
+.button-secondary {
   background-color: var(--color-fondo-principal);
   border: 2px solid var(--color-separador);
-  padding: 12px 24px;
+  border-radius: 8px;
   color: var(--color-texto-principal);
   font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
   margin-top: 1rem;
-  width: 100%;
   max-width: 600px;
+  padding: 12px 24px;
+  width: 100%;
 }
-
 
 /* Animaciones clave */
 @keyframes slideInLeft {

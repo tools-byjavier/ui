@@ -4,10 +4,16 @@ const toggle = document.querySelector('.header-button');
 // Obtenemos el elemento del menú de navegación
 const nav = document.getElementById('nav');
 
+// Obtenemos el elemento <main>
+const main = document.getElementById('main');
+
 // Función para abrir o cerrar el menú
 function toggleMenu() {
-  // Alterna la clase 'open' en el menú. Si la tiene, la quita; si no la tiene, la agrega
+  // Alterna la clase 'open' en el menú
   nav.classList.toggle('open');
+
+  // Alterna la clase que oculta el <main>
+  main.classList.toggle('main-hidden');
 }
 
 // Función para cerrar el menú
@@ -15,7 +21,10 @@ function closeMenu() {
   // Asegura que se quite la clase 'open' del menú
   nav.classList.remove('open');
 
-  // Devuelve el enfoque al botón (opcional, se puede quitar si no es necesario)
+  // Asegura que se muestre el <main>
+  main.classList.remove('main-hidden');
+
+  // Devuelve el enfoque al botón
   toggle.focus();
 }
 
@@ -29,3 +38,4 @@ document.addEventListener('keydown', (e) => {
     closeMenu();
   }
 });
+

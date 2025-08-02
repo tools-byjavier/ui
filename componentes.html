@@ -7,40 +7,105 @@
   <title>UI Components</title>
   <link rel="stylesheet" href="css/main.css">
   <script src="scripts/header.js" defer></script>
+  <style>
+    .container-sidebars {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 100%;
+    }
+
+    .sidebar {
+      flex: 1;
+      min-width: 150px;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .sidebar.left {
+      order: 1;
+    }
+
+    .sidebar.right {
+      order: 3;
+    }
+
+    .container-components {
+      flex: 3;
+      min-width: 300px;
+      padding: 2rem;
+      box-sizing: border-box;
+      max-width: 800px;
+      margin: 0 auto;
+      order: 2;
+    }
+
+    /* Responsive: móviles */
+    @media (max-width: 768px) {
+      .container-sidebars {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        min-width: 100%;
+      }
+
+      .container-components {
+        max-width: 100%;
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- Header -->
   <header class="header" role="banner">
+    <div class="header-container">
+      <!-- header-logo -->
+      <a href="index.html" aria-label="">
+        <picture>
+          <source srcset="assets/logo-dark.png" media="(prefers-color-scheme: dark)">
+          <img class="header-logo" id="logo" src="assets/logo-light.png" alt="">
+        </picture>
+        <span class="header-text">Components</span>
+      </a>
 
-    <!-- header-logo -->
-    <a href="index.html" aria-label="">
-      <picture>
-        <source srcset="assets/logo.png" media="(prefers-color-scheme: dark)">
-        <img style="width: 35px; height: 35px; vertical-align: middle;" id="logo" src="assets/logo-2.png" alt="">
-      </picture>
-      <span class="header-text">Components</span>
-    </a>
+      <!-- header-button -->
+      <button class="header-button" type="button" aria-label="">
+        <picture>
+          <source srcset="assets/icon-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="assets/icon-light.svg" alt="" />
+        </picture>
+      </button>
 
-    <!-- header-button -->
-    <button class="header-button" type="button" aria-label="">
-      <picture>
-        <source srcset="assets/icon.svg" media="(prefers-color-scheme: dark)">
-        <img src="assets/icon-dark.svg" alt="" />
-      </picture>
-    </button>
-
-    <!-- header-nav -->
-    <nav id="nav" class="header-nav" role="navigation" aria-label="">
-      <ul class="header-nav-menu">
-        <li><a href="componentes.html" class="header-link active">Componentes</a></li>
-        <li><a href="#Iconos" class="header-link">Iconos</a></li>
-        <li><a href="#Documentación" class="header-link">Documentación</a></li>
-        <li><a href="#contacto" class="header-link">Contacto</a></li>
-      </ul>
-    </nav>
+      <!-- header-nav -->
+      <nav id="nav" class="header-nav" role="navigation" aria-label="">
+        <ul class="header-nav-menu">
+          <li><a href="#" class="header-link active">Componentes</a></li>
+          <li><a href="iconos.html" class="header-link">Iconos</a></li>
+          <li><a href="documentacion.html" class="header-link">Documentación</a></li>
+          <li><a href="contacto.html" class="header-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+
+
+
+
+
+  <div class="container-sidebars">
+    <aside class="sidebar left">Lateral Izquierdo</aside>
+
+    <main class="container-components">
+
+    </main>
+
+    <aside class="sidebar right">Lateral Derecho</aside>
+  </div>
+
+
 </body>
 
 </html>
