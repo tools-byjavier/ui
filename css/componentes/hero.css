@@ -11,6 +11,17 @@
   text-align: center;
 }
 
+.version {
+  background-color: var(--color-fondo-principal);
+  border: 2px solid var(--color-separador);
+  border-radius: 16px;
+  color: var(--color-texto-principal);
+  margin-bottom: 1rem;
+  max-width: 200px;
+  padding: 6px;
+  width: 100%;
+}
+
 .hero-title {
   font-size: 42px;
   font-weight: bold;
@@ -62,17 +73,6 @@
   margin-top: 1rem;
   max-width: 600px;
   padding: 12px;
-  width: 100%;
-}
-
-.version {
-  background-color: var(--color-fondo-principal);
-  border: 2px solid var(--color-separador);
-  border-radius: 16px;
-  color: var(--color-texto-principal);
-  margin-bottom: 1rem;
-  max-width: 200px;
-  padding: 6px;
   width: 100%;
 }
 
