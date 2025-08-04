@@ -24,7 +24,7 @@
       </a>
 
       <!-- header-button -->
-      <button class="header-button" type="button" aria-label="">
+      <button class="header-button" onclick="playSound()" type="button" aria-label="">
         <picture>
           <source srcset="assets/icon-dark.svg" media="(prefers-color-scheme: dark)">
           <img src="assets/icon-light.svg" alt="" />
@@ -43,8 +43,18 @@
     </div>
   </header>
 
-  <main id="main">
+  <audio id="click-sound" src="assets/menu-selection.mp3" preload="auto"></audio>
+  <script>
+    function playSound() {
+      const sound = document.getElementById("click-sound");
+      sound.currentTime = 0; // reinicia el sonido si ya se estaba reproduciendo
+      sound.play();
+    }
+  </script>
+
+  <main style="padding: 1rem;" id="main">
     <section class="hero">
+      <button type="button" class="version animation slide">UI Components v.1.0.0</button>
       <h1 class="hero-title animation slide">
         Crea interfaces modernas con componentes
         <span class="highlight">inteligentes</span>
@@ -58,5 +68,7 @@
     </section>
   </main>
 </body>
+
+
 
 </html>

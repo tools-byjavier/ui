@@ -39,3 +39,11 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// Evento que detecta cambios en el tamaño de la ventana
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    // Asegura que el menú esté cerrado y el main visible
+    nav.classList.remove('open');
+    main.classList.remove('main-hidden');
+  }
+});
